@@ -1,0 +1,2332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.6 on win32)" generated="20240507 18:54:47.108" rpa="false" schemaversion="3">
+<suite id="s1" name="Testsuite" source="D:\thanos_web_testing\testsuite">
+<suite id="s1-s1" name="01 Home" source="D:\thanos_web_testing\testsuite\01_Home">
+<suite id="s1-s1-s1" name="001 Home page" source="D:\thanos_web_testing\testsuite\01_Home\001_Home_page.robot">
+<test id="s1-s1-s1-t1" name="Configuration of the number of reading station in device will be tested" line="8">
+<kw name="Open Browser And Maximize" library="common" type="SETUP">
+<arg>${environment}</arg>
+<doc>Open Browser And Maximize</doc>
+<kw name="New Browser" library="Browser">
+<arg>${BROWSER}</arg>
+<arg>headless=${HEADLESS_MODE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20240507 18:54:49.863" level="INFO">{"browser": "chromium", "headless": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "deprecated_pos_args": [], "tracesDir": "D:\\thanos_web_testing\\browser\\traces\\8f5d415e-e9b6-4725-9bfa-aaa0ac13be47"}</msg>
+<msg timestamp="20240507 18:54:51.501" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"deprecated_pos_args":[],"tracesDir":"D:\\thanos_web_testing\\browser\\traces\\8f5d415e-e9b6-4725-9bfa-aaa0ac13be47"}</msg>
+<status status="PASS" starttime="20240507 18:54:49.862" endtime="20240507 18:54:51.501"/>
+</kw>
+<kw name="New Context" library="Browser">
+<arg>viewport={'width': 1200, 'height': 1000}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20240507 18:54:51.503" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "hideRfBrowser": false,
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "viewport": {
+    "height": 1000,
+    "width": 1200
+  },
+  "deprecated_pos_args": []
+}</msg>
+<msg timestamp="20240507 18:54:51.532" level="INFO">Successfully created context. </msg>
+<msg timestamp="20240507 18:54:51.532" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': False, 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'viewport': {'height': 1000, 'width': 1200}, 'deprecated_pos_args': []}</msg>
+<status status="PASS" starttime="20240507 18:54:51.501" endtime="20240507 18:54:51.532"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>${DEFAULT_TIMEOUT}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<msg timestamp="20240507 18:54:51.538" level="INFO">Set timeout to: 30000</msg>
+<status status="PASS" starttime="20240507 18:54:51.533" endtime="20240507 18:54:51.538"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${environment}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20240507 18:54:55.645" level="INFO">Successfully initialized new page object and opened url: http://172.25.125.139</msg>
+<status status="PASS" starttime="20240507 18:54:51.539" endtime="20240507 18:54:55.645"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:49.861" endtime="20240507 18:54:55.646"/>
+</kw>
+<kw name="Given The User Is Logged In To The Thanos Application" library="landing_page">
+<doc>The User Is Logged In To The Thanos Application</doc>
+<kw name="Click On Element" library="elements">
+<arg>${lock_icon}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:54:55.648" endtime="20240507 18:54:56.260"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:55.648" endtime="20240507 18:54:56.260"/>
+</kw>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${password_input}</arg>
+<arg>password</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:54:56.266" level="INFO">Fills the text 'password' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:54:56.266" endtime="20240507 18:54:56.318"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:56.265" endtime="20240507 18:54:56.319"/>
+</kw>
+<kw name="Click On Element" library="elements">
+<arg>${login_btn}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:54:56.325" endtime="20240507 18:54:56.795"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:56.325" endtime="20240507 18:54:56.796"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:55.647" endtime="20240507 18:54:56.796"/>
+</kw>
+<kw name="When User Navigates To Antenna Parameters Window" library="antenna_parameter">
+<doc>User Navigates To Antenna Parameters Window</doc>
+<kw name="User Click On Application Tab" library="landing_page">
+<doc>User Click On Application Tab</doc>
+<kw name="Click On Element" library="elements">
+<arg>${Application_tab}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:54:56.802" endtime="20240507 18:54:57.121"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:56.802" endtime="20240507 18:54:57.123"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:56.798" endtime="20240507 18:54:57.124"/>
+</kw>
+<kw name="User Click On Plus Sign To Open Wizard Type" library="application">
+<doc>User Click On Plus Sign To Open Wizard Type</doc>
+<kw name="Click On Element" library="elements">
+<arg>${wizard_plus_sign}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:54:57.129" endtime="20240507 18:54:57.293"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:57.128" endtime="20240507 18:54:57.293"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:57.126" endtime="20240507 18:54:57.293"/>
+</kw>
+<kw name="User Selects Wizard 3" library="application">
+<doc>User Selects Wizard 3</doc>
+<kw name="Click On Element" library="elements">
+<arg>${wizard3}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:54:57.296" endtime="20240507 18:54:57.362"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:57.296" endtime="20240507 18:54:57.362"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:57.294" endtime="20240507 18:54:57.363"/>
+</kw>
+<kw name="User Enter Nessesary Inputs To Create A New App" library="application">
+<doc>User Enter Nessesary Inputs To Create A New App</doc>
+<kw name="Click On Element" library="elements">
+<arg>${wizard3}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:54:57.365" endtime="20240507 18:54:57.433"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:57.365" endtime="20240507 18:54:57.434"/>
+</kw>
+<kw name="Enter App Name" library="application">
+<arg>${DEFAULT_APP_NAME}</arg>
+<doc>Enter App Name</doc>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${app_name_input}</arg>
+<arg>${app_name}</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:54:57.441" level="INFO">Fills the text 'Thanos_Test_App' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:54:57.441" endtime="20240507 18:54:57.529"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:57.440" endtime="20240507 18:54:57.530"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:57.436" endtime="20240507 18:54:57.530"/>
+</kw>
+<kw name="Enter Description" library="application">
+<arg>${DEFAULT_APP_DESCRIPTION}</arg>
+<doc>Enter Description</doc>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${app_description_input}</arg>
+<arg>${app_description}</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:54:57.537" level="INFO">Fills the text 'Thanos_Test_App_Description' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:54:57.537" endtime="20240507 18:54:57.591"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:57.536" endtime="20240507 18:54:57.593"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:57.532" endtime="20240507 18:54:57.593"/>
+</kw>
+<kw name="Enter Author Name" library="application">
+<arg>${DEFAULT_AUTHOR_NAME}</arg>
+<doc>Enter Author Name</doc>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${app_author_input}</arg>
+<arg>${app_author}</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:54:57.600" level="INFO">Fills the text 'Yogesh' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:54:57.600" endtime="20240507 18:54:57.653"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:57.600" endtime="20240507 18:54:57.653"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:57.596" endtime="20240507 18:54:57.653"/>
+</kw>
+<kw name="Click On Element" library="elements">
+<arg>${ok_btn}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:54:57.655" endtime="20240507 18:54:57.974"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:57.655" endtime="20240507 18:54:57.974"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:57.363" endtime="20240507 18:54:57.975"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:56.797" endtime="20240507 18:54:57.975"/>
+</kw>
+<kw name="And User Is Able To Verify Addition Of Reading Station" library="antenna_parameter">
+<doc>User Is Able To Verify Addition Of Reading Station</doc>
+<kw name="Change Number Of Reading Stations Count" library="antenna_parameter">
+<arg>2</arg>
+<doc>To Change Number of reading stations count</doc>
+<kw name="User Switch Reading Station Number" library="antenna_parameter_elements">
+<arg>${count_to_be_change}</arg>
+<doc>User switch reading station number</doc>
+<if>
+<branch type="IF" condition="${choice} == 1">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240507 18:54:57.981" endtime="20240507 18:54:57.981"/>
+</kw>
+<status status="NOT RUN" starttime="20240507 18:54:57.981" endtime="20240507 18:54:57.981"/>
+</branch>
+<branch type="ELSE IF" condition="${choice} == 2">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice2}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240507 18:54:57.982" level="INFO">${ele_click} = ((//ifm-scroll-panel)[2]//li//span)[2]</msg>
+<status status="PASS" starttime="20240507 18:54:57.981" endtime="20240507 18:54:57.982"/>
+</kw>
+<status status="PASS" starttime="20240507 18:54:57.981" endtime="20240507 18:54:57.982"/>
+</branch>
+<branch type="ELSE IF" condition="${choice} == 3">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice3}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240507 18:54:57.982" endtime="20240507 18:54:57.982"/>
+</kw>
+<status status="NOT RUN" starttime="20240507 18:54:57.982" endtime="20240507 18:54:57.982"/>
+</branch>
+<branch type="ELSE IF" condition="${choice} == 4">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice4}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240507 18:54:57.982" endtime="20240507 18:54:57.982"/>
+</kw>
+<status status="NOT RUN" starttime="20240507 18:54:57.982" endtime="20240507 18:54:57.982"/>
+</branch>
+<status status="PASS" starttime="20240507 18:54:57.981" endtime="20240507 18:54:57.983"/>
+</if>
+<kw name="Click On Element" library="elements">
+<arg>${Number_of_reading_stations_dropdown}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240507 18:55:13.187" level="WARN">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg timestamp="20240507 18:55:13.190" level="FAIL">Error: locator.click: Target closed
+=========================== logs ===========================
+waiting for locator('xpath=//html/body/app-root/app-wizards/app-expert-mode/section/div/div[1]/app-antenna-settings/section/div/ifm-scroll-panel/div/div[1]/app-rs-settings/div/div[2]/div[2]/ifm-select/ifm-field/div/div/div[1]/div')
+============================================================</msg>
+<status status="FAIL" starttime="20240507 18:54:57.985" endtime="20240507 18:55:13.270"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:54:57.985" endtime="20240507 18:55:13.270"/>
+</kw>
+<kw name="Click On Element" library="elements">
+<arg>${ele_click}</arg>
+<doc>Click on element</doc>
+<status status="NOT RUN" starttime="20240507 18:55:13.271" endtime="20240507 18:55:13.272"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:54:57.980" endtime="20240507 18:55:13.272"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:54:57.978" endtime="20240507 18:55:13.272"/>
+</kw>
+<kw name="Get Antenna Parameters Reading Station Count" library="antenna_parameter_elements">
+<var>${count}</var>
+<doc>Get Antenna Parameters Reading Station Count</doc>
+<status status="NOT RUN" starttime="20240507 18:55:13.272" endtime="20240507 18:55:13.272"/>
+</kw>
+<kw name="Change Number Of Reading Stations Count" library="antenna_parameter">
+<arg>3</arg>
+<doc>To Change Number of reading stations count</doc>
+<status status="NOT RUN" starttime="20240507 18:55:13.272" endtime="20240507 18:55:13.272"/>
+</kw>
+<kw name="Get Antenna Parameters Reading Station Count" library="antenna_parameter_elements">
+<var>${count}</var>
+<doc>Get Antenna Parameters Reading Station Count</doc>
+<status status="NOT RUN" starttime="20240507 18:55:13.272" endtime="20240507 18:55:13.273"/>
+</kw>
+<kw name="Change Number Of Reading Stations Count" library="antenna_parameter">
+<arg>4</arg>
+<doc>To Change Number of reading stations count</doc>
+<status status="NOT RUN" starttime="20240507 18:55:13.273" endtime="20240507 18:55:13.273"/>
+</kw>
+<kw name="Get Antenna Parameters Reading Station Count" library="antenna_parameter_elements">
+<var>${count}</var>
+<doc>Get Antenna Parameters Reading Station Count</doc>
+<status status="NOT RUN" starttime="20240507 18:55:13.273" endtime="20240507 18:55:13.273"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:54:57.978" endtime="20240507 18:55:13.273"/>
+</kw>
+<kw name="Then User Is Able To Verify Deletion Of Reading Station" library="antenna_parameter">
+<doc>User Is Able To Verify Deletion Of Reading Station</doc>
+<status status="NOT RUN" starttime="20240507 18:55:13.275" endtime="20240507 18:55:13.275"/>
+</kw>
+<tag>Thanos_01-1899</tag>
+<status status="FAIL" starttime="20240507 18:54:49.858" endtime="20240507 18:55:13.275">Error: locator.click: Target closed
+=========================== logs ===========================
+waiting for locator('xpath=//html/body/app-root/app-wizards/app-expert-mode/section/div/div[1]/app-antenna-settings/section/div/ifm-scroll-panel/div/div[1]/app-rs-settings/div/div[2]/div[2]/ifm-select/ifm-field/div/div/div[1]/div')
+============================================================</status>
+</test>
+<test id="s1-s1-s1-t2" name="Function of deleting of reading stations will be tested" line="15">
+<kw name="Open Browser And Maximize" library="common" type="SETUP">
+<arg>${environment}</arg>
+<doc>Open Browser And Maximize</doc>
+<kw name="New Browser" library="Browser">
+<arg>${BROWSER}</arg>
+<arg>headless=${HEADLESS_MODE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20240507 18:55:13.317" level="INFO">{"browser": "chromium", "headless": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "deprecated_pos_args": [], "tracesDir": "D:\\thanos_web_testing\\browser\\traces\\febc88bd-a41c-4945-a759-d5b5e504a899"}</msg>
+<msg timestamp="20240507 18:55:14.308" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"deprecated_pos_args":[],"tracesDir":"D:\\thanos_web_testing\\browser\\traces\\febc88bd-a41c-4945-a759-d5b5e504a899"}</msg>
+<status status="PASS" starttime="20240507 18:55:13.317" endtime="20240507 18:55:14.309"/>
+</kw>
+<kw name="New Context" library="Browser">
+<arg>viewport={'width': 1200, 'height': 1000}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20240507 18:55:14.310" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "hideRfBrowser": false,
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "viewport": {
+    "height": 1000,
+    "width": 1200
+  },
+  "deprecated_pos_args": []
+}</msg>
+<msg timestamp="20240507 18:55:14.333" level="INFO">Successfully created context. </msg>
+<msg timestamp="20240507 18:55:14.333" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': False, 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'viewport': {'height': 1000, 'width': 1200}, 'deprecated_pos_args': []}</msg>
+<status status="PASS" starttime="20240507 18:55:14.309" endtime="20240507 18:55:14.334"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>${DEFAULT_TIMEOUT}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<msg timestamp="20240507 18:55:14.337" level="INFO">Set timeout to: 30000</msg>
+<status status="PASS" starttime="20240507 18:55:14.334" endtime="20240507 18:55:14.338"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${environment}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20240507 18:55:19.963" level="INFO">Successfully initialized new page object and opened url: http://172.25.125.139</msg>
+<status status="PASS" starttime="20240507 18:55:14.338" endtime="20240507 18:55:19.964"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:13.316" endtime="20240507 18:55:19.964"/>
+</kw>
+<kw name="Given The User Is Logged In To The Thanos Application" library="landing_page">
+<doc>The User Is Logged In To The Thanos Application</doc>
+<kw name="Click On Element" library="elements">
+<arg>${lock_icon}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:55:19.967" endtime="20240507 18:55:20.630"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:19.967" endtime="20240507 18:55:20.631"/>
+</kw>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${password_input}</arg>
+<arg>password</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:55:20.635" level="INFO">Fills the text 'password' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:55:20.634" endtime="20240507 18:55:20.677"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:20.634" endtime="20240507 18:55:20.677"/>
+</kw>
+<kw name="Click On Element" library="elements">
+<arg>${login_btn}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:55:20.680" endtime="20240507 18:55:21.071"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:20.679" endtime="20240507 18:55:21.072"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:19.965" endtime="20240507 18:55:21.072"/>
+</kw>
+<kw name="When User Navigates To Antenna Parameters Window" library="antenna_parameter">
+<doc>User Navigates To Antenna Parameters Window</doc>
+<kw name="User Click On Application Tab" library="landing_page">
+<doc>User Click On Application Tab</doc>
+<kw name="Click On Element" library="elements">
+<arg>${Application_tab}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:55:21.077" endtime="20240507 18:55:21.239"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:21.077" endtime="20240507 18:55:21.240"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:21.075" endtime="20240507 18:55:21.240"/>
+</kw>
+<kw name="User Click On Plus Sign To Open Wizard Type" library="application">
+<doc>User Click On Plus Sign To Open Wizard Type</doc>
+<kw name="Click On Element" library="elements">
+<arg>${wizard_plus_sign}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:55:21.243" endtime="20240507 18:55:21.676"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:21.242" endtime="20240507 18:55:21.677"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:21.240" endtime="20240507 18:55:21.679"/>
+</kw>
+<kw name="User Selects Wizard 3" library="application">
+<doc>User Selects Wizard 3</doc>
+<kw name="Click On Element" library="elements">
+<arg>${wizard3}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:55:21.691" endtime="20240507 18:55:21.842"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:21.690" endtime="20240507 18:55:21.843"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:21.680" endtime="20240507 18:55:21.843"/>
+</kw>
+<kw name="User Enter Nessesary Inputs To Create A New App" library="application">
+<doc>User Enter Nessesary Inputs To Create A New App</doc>
+<kw name="Click On Element" library="elements">
+<arg>${wizard3}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:55:21.846" endtime="20240507 18:55:22.022"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:21.846" endtime="20240507 18:55:22.023"/>
+</kw>
+<kw name="Enter App Name" library="application">
+<arg>${DEFAULT_APP_NAME}</arg>
+<doc>Enter App Name</doc>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${app_name_input}</arg>
+<arg>${app_name}</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:55:22.029" level="INFO">Fills the text 'Thanos_Test_App' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:55:22.029" endtime="20240507 18:55:22.058"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:22.028" endtime="20240507 18:55:22.058"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:22.025" endtime="20240507 18:55:22.058"/>
+</kw>
+<kw name="Enter Description" library="application">
+<arg>${DEFAULT_APP_DESCRIPTION}</arg>
+<doc>Enter Description</doc>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${app_description_input}</arg>
+<arg>${app_description}</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:55:22.065" level="INFO">Fills the text 'Thanos_Test_App_Description' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:55:22.064" endtime="20240507 18:55:22.101"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:22.064" endtime="20240507 18:55:22.101"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:22.061" endtime="20240507 18:55:22.101"/>
+</kw>
+<kw name="Enter Author Name" library="application">
+<arg>${DEFAULT_AUTHOR_NAME}</arg>
+<doc>Enter Author Name</doc>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${app_author_input}</arg>
+<arg>${app_author}</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:55:22.108" level="INFO">Fills the text 'Yogesh' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:55:22.108" endtime="20240507 18:55:22.141"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:22.107" endtime="20240507 18:55:22.142"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:22.103" endtime="20240507 18:55:22.142"/>
+</kw>
+<kw name="Click On Element" library="elements">
+<arg>${ok_btn}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:55:22.144" endtime="20240507 18:55:22.366"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:22.144" endtime="20240507 18:55:22.366"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:21.843" endtime="20240507 18:55:22.367"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:21.074" endtime="20240507 18:55:22.367"/>
+</kw>
+<kw name="And User Create 4 Reading stations" library="antenna_parameter">
+<doc>User Create 4 Reading Stations</doc>
+<kw name="Change Number Of Reading Stations Count" library="antenna_parameter">
+<arg>4</arg>
+<doc>To Change Number of reading stations count</doc>
+<kw name="User Switch Reading Station Number" library="antenna_parameter_elements">
+<arg>${count_to_be_change}</arg>
+<doc>User switch reading station number</doc>
+<if>
+<branch type="IF" condition="${choice} == 1">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240507 18:55:22.370" endtime="20240507 18:55:22.370"/>
+</kw>
+<status status="NOT RUN" starttime="20240507 18:55:22.370" endtime="20240507 18:55:22.370"/>
+</branch>
+<branch type="ELSE IF" condition="${choice} == 2">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice2}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240507 18:55:22.371" endtime="20240507 18:55:22.371"/>
+</kw>
+<status status="NOT RUN" starttime="20240507 18:55:22.370" endtime="20240507 18:55:22.371"/>
+</branch>
+<branch type="ELSE IF" condition="${choice} == 3">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice3}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240507 18:55:22.371" endtime="20240507 18:55:22.371"/>
+</kw>
+<status status="NOT RUN" starttime="20240507 18:55:22.371" endtime="20240507 18:55:22.371"/>
+</branch>
+<branch type="ELSE IF" condition="${choice} == 4">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice4}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240507 18:55:22.372" level="INFO">${ele_click} = ((//ifm-scroll-panel)[2]//li//span)[4]</msg>
+<status status="PASS" starttime="20240507 18:55:22.371" endtime="20240507 18:55:22.372"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:22.371" endtime="20240507 18:55:22.372"/>
+</branch>
+<status status="PASS" starttime="20240507 18:55:22.370" endtime="20240507 18:55:22.372"/>
+</if>
+<kw name="Click On Element" library="elements">
+<arg>${Number_of_reading_stations_dropdown}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240507 18:55:52.776" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240507 18:55:52.776" level="FAIL">TimeoutError: locator.click: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for locator('xpath=//html/body/app-root/app-wizards/app-expert-mode/section/div/div[1]/app-antenna-settings/section/div/ifm-scroll-panel/div/div[1]/app-rs-settings/div/div[2]/div[2]/ifm-select/ifm-field/div/div/div[1]/div')
+============================================================
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<status status="FAIL" starttime="20240507 18:55:22.374" endtime="20240507 18:55:52.777"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:55:22.374" endtime="20240507 18:55:52.777"/>
+</kw>
+<kw name="Click On Element" library="elements">
+<arg>${ele_click}</arg>
+<doc>Click on element</doc>
+<status status="NOT RUN" starttime="20240507 18:55:52.779" endtime="20240507 18:55:52.779"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:55:22.370" endtime="20240507 18:55:52.779"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:55:22.368" endtime="20240507 18:55:52.779"/>
+</kw>
+<kw name="Get Antenna Parameters Reading Station Count" library="antenna_parameter_elements">
+<var>${count}</var>
+<doc>Get Antenna Parameters Reading Station Count</doc>
+<status status="NOT RUN" starttime="20240507 18:55:52.780" endtime="20240507 18:55:52.780"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${count}</arg>
+<arg>${count}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20240507 18:55:52.780" endtime="20240507 18:55:52.780"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:55:22.368" endtime="20240507 18:55:52.780"/>
+</kw>
+<kw name="Then User Verify The Reading Stations Count By Deleting Stations One By One" library="antenna_parameter">
+<doc>User Verify The Reading Stations Count By Deleting Stations One By One</doc>
+<status status="NOT RUN" starttime="20240507 18:55:52.781" endtime="20240507 18:55:52.781"/>
+</kw>
+<tag>Thanos_01-1900</tag>
+<status status="FAIL" starttime="20240507 18:55:13.314" endtime="20240507 18:55:52.781">TimeoutError: locator.click: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for locator('xpath=//html/body/app-root/app-wizards/app-expert-mode/section/div/div[1]/app-antenna-settings/section/div/ifm-scroll-panel/div/div[1]/app-rs-settings/div/div[2]/div[2]/ifm-select/ifm-field/div/div/div[1]/div')
+============================================================
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</test>
+<test id="s1-s1-s1-t3" name="Function of adding and removing of ports to reading station will be tested" line="22">
+<kw name="Open Browser And Maximize" library="common" type="SETUP">
+<arg>${environment}</arg>
+<doc>Open Browser And Maximize</doc>
+<kw name="New Browser" library="Browser">
+<arg>${BROWSER}</arg>
+<arg>headless=${HEADLESS_MODE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20240507 18:55:52.935" level="INFO">{"browser": "chromium", "headless": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "deprecated_pos_args": [], "tracesDir": "D:\\thanos_web_testing\\browser\\traces\\6193351e-5640-4215-a9f8-84bfd50a8b7a"}</msg>
+<msg timestamp="20240507 18:55:54.022" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"deprecated_pos_args":[],"tracesDir":"D:\\thanos_web_testing\\browser\\traces\\6193351e-5640-4215-a9f8-84bfd50a8b7a"}</msg>
+<status status="PASS" starttime="20240507 18:55:52.933" endtime="20240507 18:55:54.023"/>
+</kw>
+<kw name="New Context" library="Browser">
+<arg>viewport={'width': 1200, 'height': 1000}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20240507 18:55:54.030" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "hideRfBrowser": false,
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "viewport": {
+    "height": 1000,
+    "width": 1200
+  },
+  "deprecated_pos_args": []
+}</msg>
+<msg timestamp="20240507 18:55:54.073" level="INFO">Successfully created context. </msg>
+<msg timestamp="20240507 18:55:54.073" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': False, 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'viewport': {'height': 1000, 'width': 1200}, 'deprecated_pos_args': []}</msg>
+<status status="PASS" starttime="20240507 18:55:54.025" endtime="20240507 18:55:54.074"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>${DEFAULT_TIMEOUT}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<msg timestamp="20240507 18:55:54.089" level="INFO">Set timeout to: 30000</msg>
+<status status="PASS" starttime="20240507 18:55:54.076" endtime="20240507 18:55:54.090"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${environment}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20240507 18:55:58.720" level="INFO">Successfully initialized new page object and opened url: http://172.25.125.139</msg>
+<status status="PASS" starttime="20240507 18:55:54.092" endtime="20240507 18:55:58.721"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:52.931" endtime="20240507 18:55:58.721"/>
+</kw>
+<kw name="Given The User Is Logged In To The Thanos Application" library="landing_page">
+<doc>The User Is Logged In To The Thanos Application</doc>
+<kw name="Click On Element" library="elements">
+<arg>${lock_icon}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:55:58.727" endtime="20240507 18:55:59.329"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:58.726" endtime="20240507 18:55:59.330"/>
+</kw>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${password_input}</arg>
+<arg>password</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:55:59.347" level="INFO">Fills the text 'password' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:55:59.346" endtime="20240507 18:55:59.393"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:59.345" endtime="20240507 18:55:59.394"/>
+</kw>
+<kw name="Click On Element" library="elements">
+<arg>${login_btn}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:55:59.401" endtime="20240507 18:55:59.809"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:59.399" endtime="20240507 18:55:59.810"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:58.722" endtime="20240507 18:55:59.811"/>
+</kw>
+<kw name="When User Navigates To Antenna Parameters Window" library="antenna_parameter">
+<doc>User Navigates To Antenna Parameters Window</doc>
+<kw name="User Click On Application Tab" library="landing_page">
+<doc>User Click On Application Tab</doc>
+<kw name="Click On Element" library="elements">
+<arg>${Application_tab}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:55:59.838" endtime="20240507 18:56:00.145"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:59.834" endtime="20240507 18:56:00.147"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:59.818" endtime="20240507 18:56:00.148"/>
+</kw>
+<kw name="User Click On Plus Sign To Open Wizard Type" library="application">
+<doc>User Click On Plus Sign To Open Wizard Type</doc>
+<kw name="Click On Element" library="elements">
+<arg>${wizard_plus_sign}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:56:00.170" endtime="20240507 18:56:00.350"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:00.167" endtime="20240507 18:56:00.352"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:00.150" endtime="20240507 18:56:00.353"/>
+</kw>
+<kw name="User Selects Wizard 3" library="application">
+<doc>User Selects Wizard 3</doc>
+<kw name="Click On Element" library="elements">
+<arg>${wizard3}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:56:00.375" endtime="20240507 18:56:00.522"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:00.371" endtime="20240507 18:56:00.524"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:00.354" endtime="20240507 18:56:00.525"/>
+</kw>
+<kw name="User Enter Nessesary Inputs To Create A New App" library="application">
+<doc>User Enter Nessesary Inputs To Create A New App</doc>
+<kw name="Click On Element" library="elements">
+<arg>${wizard3}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:56:00.546" endtime="20240507 18:56:00.631"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:00.543" endtime="20240507 18:56:00.631"/>
+</kw>
+<kw name="Enter App Name" library="application">
+<arg>${DEFAULT_APP_NAME}</arg>
+<doc>Enter App Name</doc>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${app_name_input}</arg>
+<arg>${app_name}</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:56:00.656" level="INFO">Fills the text 'Thanos_Test_App' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:56:00.655" endtime="20240507 18:56:00.693"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:00.653" endtime="20240507 18:56:00.694"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:00.640" endtime="20240507 18:56:00.694"/>
+</kw>
+<kw name="Enter Description" library="application">
+<arg>${DEFAULT_APP_DESCRIPTION}</arg>
+<doc>Enter Description</doc>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${app_description_input}</arg>
+<arg>${app_description}</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:56:00.715" level="INFO">Fills the text 'Thanos_Test_App_Description' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:56:00.714" endtime="20240507 18:56:00.755"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:00.713" endtime="20240507 18:56:00.756"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:00.700" endtime="20240507 18:56:00.756"/>
+</kw>
+<kw name="Enter Author Name" library="application">
+<arg>${DEFAULT_AUTHOR_NAME}</arg>
+<doc>Enter Author Name</doc>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${app_author_input}</arg>
+<arg>${app_author}</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:56:00.779" level="INFO">Fills the text 'Yogesh' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:56:00.778" endtime="20240507 18:56:00.865"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:00.777" endtime="20240507 18:56:00.866"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:00.764" endtime="20240507 18:56:00.866"/>
+</kw>
+<kw name="Click On Element" library="elements">
+<arg>${ok_btn}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:56:00.872" endtime="20240507 18:56:01.195"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:00.871" endtime="20240507 18:56:01.196"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:00.527" endtime="20240507 18:56:01.198"/>
+</kw>
+<status status="PASS" starttime="20240507 18:55:59.815" endtime="20240507 18:56:01.199"/>
+</kw>
+<kw name="And User Create 2 Reading stations" library="antenna_parameter">
+<doc>User Create 2 Reading Stations</doc>
+<kw name="Change Number Of Reading Stations Count" library="antenna_parameter">
+<arg>2</arg>
+<doc>To Change Number of reading stations count</doc>
+<kw name="User Switch Reading Station Number" library="antenna_parameter_elements">
+<arg>${count_to_be_change}</arg>
+<doc>User switch reading station number</doc>
+<if>
+<branch type="IF" condition="${choice} == 1">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240507 18:56:01.228" endtime="20240507 18:56:01.228"/>
+</kw>
+<status status="NOT RUN" starttime="20240507 18:56:01.226" endtime="20240507 18:56:01.229"/>
+</branch>
+<branch type="ELSE IF" condition="${choice} == 2">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice2}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240507 18:56:01.233" level="INFO">${ele_click} = ((//ifm-scroll-panel)[2]//li//span)[2]</msg>
+<status status="PASS" starttime="20240507 18:56:01.232" endtime="20240507 18:56:01.234"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:01.230" endtime="20240507 18:56:01.234"/>
+</branch>
+<branch type="ELSE IF" condition="${choice} == 3">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice3}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240507 18:56:01.236" endtime="20240507 18:56:01.237"/>
+</kw>
+<status status="NOT RUN" starttime="20240507 18:56:01.235" endtime="20240507 18:56:01.238"/>
+</branch>
+<branch type="ELSE IF" condition="${choice} == 4">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice4}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240507 18:56:01.240" endtime="20240507 18:56:01.241"/>
+</kw>
+<status status="NOT RUN" starttime="20240507 18:56:01.239" endtime="20240507 18:56:01.241"/>
+</branch>
+<status status="PASS" starttime="20240507 18:56:01.225" endtime="20240507 18:56:01.242"/>
+</if>
+<kw name="Click On Element" library="elements">
+<arg>${Number_of_reading_stations_dropdown}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240507 18:56:31.717" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-2.png"&gt;&lt;img src="browser/screenshot/fail-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240507 18:56:31.717" level="FAIL">TimeoutError: locator.click: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for locator('xpath=//html/body/app-root/app-wizards/app-expert-mode/section/div/div[1]/app-antenna-settings/section/div/ifm-scroll-panel/div/div[1]/app-rs-settings/div/div[2]/div[2]/ifm-select/ifm-field/div/div/div[1]/div')
+============================================================
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<status status="FAIL" starttime="20240507 18:56:01.260" endtime="20240507 18:56:31.718"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:56:01.258" endtime="20240507 18:56:31.719"/>
+</kw>
+<kw name="Click On Element" library="elements">
+<arg>${ele_click}</arg>
+<doc>Click on element</doc>
+<status status="NOT RUN" starttime="20240507 18:56:31.720" endtime="20240507 18:56:31.720"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:56:01.223" endtime="20240507 18:56:31.721"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:56:01.206" endtime="20240507 18:56:31.721"/>
+</kw>
+<kw name="Get Antenna Parameters Reading Station Count" library="antenna_parameter_elements">
+<var>${count}</var>
+<doc>Get Antenna Parameters Reading Station Count</doc>
+<status status="NOT RUN" starttime="20240507 18:56:31.721" endtime="20240507 18:56:31.721"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${count}</arg>
+<arg>${count}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20240507 18:56:31.721" endtime="20240507 18:56:31.721"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:56:01.203" endtime="20240507 18:56:31.721"/>
+</kw>
+<kw name="Then User Verify Function Of Adding And Removing Of Ports To Reading Station" library="antenna_parameter">
+<doc>User Verify Function Of Adding And Removing Of Ports To Reading Station</doc>
+<status status="NOT RUN" starttime="20240507 18:56:31.722" endtime="20240507 18:56:31.722"/>
+</kw>
+<tag>Thanos_01-1901</tag>
+<status status="FAIL" starttime="20240507 18:55:52.922" endtime="20240507 18:56:31.723">TimeoutError: locator.click: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for locator('xpath=//html/body/app-root/app-wizards/app-expert-mode/section/div/div[1]/app-antenna-settings/section/div/ifm-scroll-panel/div/div[1]/app-rs-settings/div/div[2]/div[2]/ifm-select/ifm-field/div/div/div[1]/div')
+============================================================
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</test>
+<test id="s1-s1-s1-t4" name="Function/Switch Activate Reading station and Activate port" line="29">
+<kw name="Open Browser And Maximize" library="common" type="SETUP">
+<arg>${environment}</arg>
+<doc>Open Browser And Maximize</doc>
+<kw name="New Browser" library="Browser">
+<arg>${BROWSER}</arg>
+<arg>headless=${HEADLESS_MODE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20240507 18:56:31.859" level="INFO">{"browser": "chromium", "headless": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "deprecated_pos_args": [], "tracesDir": "D:\\thanos_web_testing\\browser\\traces\\3f990d09-e268-42e6-b312-bc2d04782d7e"}</msg>
+<msg timestamp="20240507 18:56:32.918" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"deprecated_pos_args":[],"tracesDir":"D:\\thanos_web_testing\\browser\\traces\\3f990d09-e268-42e6-b312-bc2d04782d7e"}</msg>
+<status status="PASS" starttime="20240507 18:56:31.857" endtime="20240507 18:56:32.919"/>
+</kw>
+<kw name="New Context" library="Browser">
+<arg>viewport={'width': 1200, 'height': 1000}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20240507 18:56:32.926" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "hideRfBrowser": false,
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "viewport": {
+    "height": 1000,
+    "width": 1200
+  },
+  "deprecated_pos_args": []
+}</msg>
+<msg timestamp="20240507 18:56:32.966" level="INFO">Successfully created context. </msg>
+<msg timestamp="20240507 18:56:32.967" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': False, 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'viewport': {'height': 1000, 'width': 1200}, 'deprecated_pos_args': []}</msg>
+<status status="PASS" starttime="20240507 18:56:32.921" endtime="20240507 18:56:32.968"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>${DEFAULT_TIMEOUT}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<msg timestamp="20240507 18:56:32.983" level="INFO">Set timeout to: 30000</msg>
+<status status="PASS" starttime="20240507 18:56:32.969" endtime="20240507 18:56:32.984"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${environment}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20240507 18:56:37.403" level="INFO">Successfully initialized new page object and opened url: http://172.25.125.139</msg>
+<status status="PASS" starttime="20240507 18:56:32.985" endtime="20240507 18:56:37.403"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:31.855" endtime="20240507 18:56:37.404"/>
+</kw>
+<kw name="Given The User Is Logged In To The Thanos Application" library="landing_page">
+<doc>The User Is Logged In To The Thanos Application</doc>
+<kw name="Click On Element" library="elements">
+<arg>${lock_icon}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:56:37.413" endtime="20240507 18:56:38.004"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:37.413" endtime="20240507 18:56:38.005"/>
+</kw>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${password_input}</arg>
+<arg>password</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:56:38.021" level="INFO">Fills the text 'password' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:56:38.020" endtime="20240507 18:56:38.079"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:38.017" endtime="20240507 18:56:38.080"/>
+</kw>
+<kw name="Click On Element" library="elements">
+<arg>${login_btn}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:56:38.096" endtime="20240507 18:56:38.765"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:38.093" endtime="20240507 18:56:38.765"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:37.406" endtime="20240507 18:56:38.767"/>
+</kw>
+<kw name="When User Navigates To Antenna Parameters Window" library="antenna_parameter">
+<doc>User Navigates To Antenna Parameters Window</doc>
+<kw name="User Click On Application Tab" library="landing_page">
+<doc>User Click On Application Tab</doc>
+<kw name="Click On Element" library="elements">
+<arg>${Application_tab}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:56:38.791" endtime="20240507 18:56:38.931"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:38.788" endtime="20240507 18:56:38.931"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:38.774" endtime="20240507 18:56:38.932"/>
+</kw>
+<kw name="User Click On Plus Sign To Open Wizard Type" library="application">
+<doc>User Click On Plus Sign To Open Wizard Type</doc>
+<kw name="Click On Element" library="elements">
+<arg>${wizard_plus_sign}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:56:38.945" endtime="20240507 18:56:39.057"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:38.943" endtime="20240507 18:56:39.057"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:38.933" endtime="20240507 18:56:39.058"/>
+</kw>
+<kw name="User Selects Wizard 3" library="application">
+<doc>User Selects Wizard 3</doc>
+<kw name="Click On Element" library="elements">
+<arg>${wizard3}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:56:39.065" endtime="20240507 18:56:39.148"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:39.064" endtime="20240507 18:56:39.149"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:39.058" endtime="20240507 18:56:39.149"/>
+</kw>
+<kw name="User Enter Nessesary Inputs To Create A New App" library="application">
+<doc>User Enter Nessesary Inputs To Create A New App</doc>
+<kw name="Click On Element" library="elements">
+<arg>${wizard3}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:56:39.156" endtime="20240507 18:56:39.222"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:39.155" endtime="20240507 18:56:39.223"/>
+</kw>
+<kw name="Enter App Name" library="application">
+<arg>${DEFAULT_APP_NAME}</arg>
+<doc>Enter App Name</doc>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${app_name_input}</arg>
+<arg>${app_name}</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:56:39.238" level="INFO">Fills the text 'Thanos_Test_App' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:56:39.237" endtime="20240507 18:56:39.276"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:39.236" endtime="20240507 18:56:39.276"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:39.228" endtime="20240507 18:56:39.277"/>
+</kw>
+<kw name="Enter Description" library="application">
+<arg>${DEFAULT_APP_DESCRIPTION}</arg>
+<doc>Enter Description</doc>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${app_description_input}</arg>
+<arg>${app_description}</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:56:39.293" level="INFO">Fills the text 'Thanos_Test_App_Description' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:56:39.292" endtime="20240507 18:56:39.327"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:39.291" endtime="20240507 18:56:39.327"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:39.282" endtime="20240507 18:56:39.327"/>
+</kw>
+<kw name="Enter Author Name" library="application">
+<arg>${DEFAULT_AUTHOR_NAME}</arg>
+<doc>Enter Author Name</doc>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${app_author_input}</arg>
+<arg>${app_author}</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:56:39.342" level="INFO">Fills the text 'Yogesh' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:56:39.341" endtime="20240507 18:56:39.375"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:39.340" endtime="20240507 18:56:39.375"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:39.332" endtime="20240507 18:56:39.376"/>
+</kw>
+<kw name="Click On Element" library="elements">
+<arg>${ok_btn}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:56:39.381" endtime="20240507 18:56:39.605"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:39.380" endtime="20240507 18:56:39.606"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:39.149" endtime="20240507 18:56:39.607"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:38.771" endtime="20240507 18:56:39.607"/>
+</kw>
+<kw name="And User Create 2 Reading stations" library="antenna_parameter">
+<doc>User Create 2 Reading Stations</doc>
+<kw name="Change Number Of Reading Stations Count" library="antenna_parameter">
+<arg>2</arg>
+<doc>To Change Number of reading stations count</doc>
+<kw name="User Switch Reading Station Number" library="antenna_parameter_elements">
+<arg>${count_to_be_change}</arg>
+<doc>User switch reading station number</doc>
+<if>
+<branch type="IF" condition="${choice} == 1">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240507 18:56:39.624" endtime="20240507 18:56:39.625"/>
+</kw>
+<status status="NOT RUN" starttime="20240507 18:56:39.623" endtime="20240507 18:56:39.625"/>
+</branch>
+<branch type="ELSE IF" condition="${choice} == 2">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice2}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240507 18:56:39.628" level="INFO">${ele_click} = ((//ifm-scroll-panel)[2]//li//span)[2]</msg>
+<status status="PASS" starttime="20240507 18:56:39.627" endtime="20240507 18:56:39.628"/>
+</kw>
+<status status="PASS" starttime="20240507 18:56:39.626" endtime="20240507 18:56:39.629"/>
+</branch>
+<branch type="ELSE IF" condition="${choice} == 3">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice3}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240507 18:56:39.630" endtime="20240507 18:56:39.631"/>
+</kw>
+<status status="NOT RUN" starttime="20240507 18:56:39.629" endtime="20240507 18:56:39.631"/>
+</branch>
+<branch type="ELSE IF" condition="${choice} == 4">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice4}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240507 18:56:39.632" endtime="20240507 18:56:39.632"/>
+</kw>
+<status status="NOT RUN" starttime="20240507 18:56:39.631" endtime="20240507 18:56:39.633"/>
+</branch>
+<status status="PASS" starttime="20240507 18:56:39.623" endtime="20240507 18:56:39.633"/>
+</if>
+<kw name="Click On Element" library="elements">
+<arg>${Number_of_reading_stations_dropdown}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240507 18:57:10.299" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-3.png"&gt;&lt;img src="browser/screenshot/fail-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240507 18:57:10.300" level="FAIL">TimeoutError: locator.click: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for locator('xpath=//html/body/app-root/app-wizards/app-expert-mode/section/div/div[1]/app-antenna-settings/section/div/ifm-scroll-panel/div/div[1]/app-rs-settings/div/div[2]/div[2]/ifm-select/ifm-field/div/div/div[1]/div')
+============================================================
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<status status="FAIL" starttime="20240507 18:56:39.642" endtime="20240507 18:57:10.302"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:56:39.640" endtime="20240507 18:57:10.303"/>
+</kw>
+<kw name="Click On Element" library="elements">
+<arg>${ele_click}</arg>
+<doc>Click on element</doc>
+<status status="NOT RUN" starttime="20240507 18:57:10.309" endtime="20240507 18:57:10.309"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:56:39.622" endtime="20240507 18:57:10.309"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:56:39.611" endtime="20240507 18:57:10.310"/>
+</kw>
+<kw name="Get Antenna Parameters Reading Station Count" library="antenna_parameter_elements">
+<var>${count}</var>
+<doc>Get Antenna Parameters Reading Station Count</doc>
+<status status="NOT RUN" starttime="20240507 18:57:10.310" endtime="20240507 18:57:10.310"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${count}</arg>
+<arg>${count}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20240507 18:57:10.311" endtime="20240507 18:57:10.311"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:56:39.610" endtime="20240507 18:57:10.312"/>
+</kw>
+<kw name="Then User verify Function/Switch Activate Reading station and Activate port" library="antenna_parameter">
+<doc>User Verify Function/Switch Activate Reading Station And Activate Port</doc>
+<status status="NOT RUN" starttime="20240507 18:57:10.313" endtime="20240507 18:57:10.313"/>
+</kw>
+<tag>tst</tag>
+<status status="FAIL" starttime="20240507 18:56:31.847" endtime="20240507 18:57:10.314">TimeoutError: locator.click: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for locator('xpath=//html/body/app-root/app-wizards/app-expert-mode/section/div/div[1]/app-antenna-settings/section/div/ifm-scroll-panel/div/div[1]/app-rs-settings/div/div[2]/div[2]/ifm-select/ifm-field/div/div/div[1]/div')
+============================================================
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</test>
+<test id="s1-s1-s1-t5" name="Function synchronize all Ports" line="37">
+<kw name="Open Browser And Maximize" library="common" type="SETUP">
+<arg>${environment}</arg>
+<doc>Open Browser And Maximize</doc>
+<kw name="New Browser" library="Browser">
+<arg>${BROWSER}</arg>
+<arg>headless=${HEADLESS_MODE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20240507 18:57:10.497" level="INFO">{"browser": "chromium", "headless": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "deprecated_pos_args": [], "tracesDir": "D:\\thanos_web_testing\\browser\\traces\\740be8dc-0800-4f2f-9205-849ba8079578"}</msg>
+<msg timestamp="20240507 18:57:11.702" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"deprecated_pos_args":[],"tracesDir":"D:\\thanos_web_testing\\browser\\traces\\740be8dc-0800-4f2f-9205-849ba8079578"}</msg>
+<status status="PASS" starttime="20240507 18:57:10.495" endtime="20240507 18:57:11.703"/>
+</kw>
+<kw name="New Context" library="Browser">
+<arg>viewport={'width': 1200, 'height': 1000}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20240507 18:57:11.710" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "hideRfBrowser": false,
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "viewport": {
+    "height": 1000,
+    "width": 1200
+  },
+  "deprecated_pos_args": []
+}</msg>
+<msg timestamp="20240507 18:57:11.751" level="INFO">Successfully created context. </msg>
+<msg timestamp="20240507 18:57:11.752" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': False, 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'viewport': {'height': 1000, 'width': 1200}, 'deprecated_pos_args': []}</msg>
+<status status="PASS" starttime="20240507 18:57:11.706" endtime="20240507 18:57:11.752"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>${DEFAULT_TIMEOUT}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<msg timestamp="20240507 18:57:11.767" level="INFO">Set timeout to: 30000</msg>
+<status status="PASS" starttime="20240507 18:57:11.754" endtime="20240507 18:57:11.768"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${environment}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20240507 18:57:16.609" level="INFO">Successfully initialized new page object and opened url: http://172.25.125.139</msg>
+<status status="PASS" starttime="20240507 18:57:11.769" endtime="20240507 18:57:16.609"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:10.494" endtime="20240507 18:57:16.610"/>
+</kw>
+<kw name="Given The User Is Logged In To The Thanos Application" library="landing_page">
+<doc>The User Is Logged In To The Thanos Application</doc>
+<kw name="Click On Element" library="elements">
+<arg>${lock_icon}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:57:16.629" endtime="20240507 18:57:17.542"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:16.626" endtime="20240507 18:57:17.543"/>
+</kw>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${password_input}</arg>
+<arg>password</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:57:17.577" level="INFO">Fills the text 'password' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:57:17.575" endtime="20240507 18:57:17.679"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:17.572" endtime="20240507 18:57:17.681"/>
+</kw>
+<kw name="Click On Element" library="elements">
+<arg>${login_btn}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:57:17.699" endtime="20240507 18:57:18.014"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:17.696" endtime="20240507 18:57:18.015"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:16.614" endtime="20240507 18:57:18.016"/>
+</kw>
+<kw name="When User Navigates To Antenna Parameters Window" library="antenna_parameter">
+<doc>User Navigates To Antenna Parameters Window</doc>
+<kw name="User Click On Application Tab" library="landing_page">
+<doc>User Click On Application Tab</doc>
+<kw name="Click On Element" library="elements">
+<arg>${Application_tab}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:57:18.037" endtime="20240507 18:57:18.201"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:18.034" endtime="20240507 18:57:18.202"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:18.022" endtime="20240507 18:57:18.203"/>
+</kw>
+<kw name="User Click On Plus Sign To Open Wizard Type" library="application">
+<doc>User Click On Plus Sign To Open Wizard Type</doc>
+<kw name="Click On Element" library="elements">
+<arg>${wizard_plus_sign}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:57:18.224" endtime="20240507 18:57:18.373"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:18.221" endtime="20240507 18:57:18.374"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:18.205" endtime="20240507 18:57:18.376"/>
+</kw>
+<kw name="User Selects Wizard 3" library="application">
+<doc>User Selects Wizard 3</doc>
+<kw name="Click On Element" library="elements">
+<arg>${wizard3}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:57:18.395" endtime="20240507 18:57:18.478"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:18.393" endtime="20240507 18:57:18.479"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:18.377" endtime="20240507 18:57:18.479"/>
+</kw>
+<kw name="User Enter Nessesary Inputs To Create A New App" library="application">
+<doc>User Enter Nessesary Inputs To Create A New App</doc>
+<kw name="Click On Element" library="elements">
+<arg>${wizard3}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:57:18.490" endtime="20240507 18:57:18.565"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:18.488" endtime="20240507 18:57:18.565"/>
+</kw>
+<kw name="Enter App Name" library="application">
+<arg>${DEFAULT_APP_NAME}</arg>
+<doc>Enter App Name</doc>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${app_name_input}</arg>
+<arg>${app_name}</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:57:18.582" level="INFO">Fills the text 'Thanos_Test_App' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:57:18.581" endtime="20240507 18:57:18.631"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:18.580" endtime="20240507 18:57:18.632"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:18.570" endtime="20240507 18:57:18.632"/>
+</kw>
+<kw name="Enter Description" library="application">
+<arg>${DEFAULT_APP_DESCRIPTION}</arg>
+<doc>Enter Description</doc>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${app_description_input}</arg>
+<arg>${app_description}</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:57:18.653" level="INFO">Fills the text 'Thanos_Test_App_Description' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:57:18.653" endtime="20240507 18:57:18.695"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:18.651" endtime="20240507 18:57:18.695"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:18.639" endtime="20240507 18:57:18.696"/>
+</kw>
+<kw name="Enter Author Name" library="application">
+<arg>${DEFAULT_AUTHOR_NAME}</arg>
+<doc>Enter Author Name</doc>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${app_author_input}</arg>
+<arg>${app_author}</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:57:18.724" level="INFO">Fills the text 'Yogesh' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:57:18.723" endtime="20240507 18:57:18.784"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:18.721" endtime="20240507 18:57:18.785"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:18.704" endtime="20240507 18:57:18.786"/>
+</kw>
+<kw name="Click On Element" library="elements">
+<arg>${ok_btn}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:57:18.796" endtime="20240507 18:57:19.085"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:18.794" endtime="20240507 18:57:19.086"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:18.480" endtime="20240507 18:57:19.086"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:18.020" endtime="20240507 18:57:19.087"/>
+</kw>
+<kw name="Then Synchronize all ports switch should be off" library="antenna_parameter_elements">
+<doc>Synchronize All Ports Switch Should Be Off</doc>
+<kw name="Get Toggle Status" library="antenna_parameter_elements">
+<var>${status}</var>
+<arg>${synchronize_all_ports_toggle_status}</arg>
+<doc>Get toggle status and return the value</doc>
+<kw name="Get Attribute" library="Browser">
+<var>${status}</var>
+<arg>${toggle_xpath}</arg>
+<arg>aria-checked</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the HTML ``attribute`` of the element found by ``selector``.</doc>
+<msg timestamp="20240507 18:57:19.146" level="INFO">${status} = false</msg>
+<status status="PASS" starttime="20240507 18:57:19.093" endtime="20240507 18:57:19.146"/>
+</kw>
+<msg timestamp="20240507 18:57:19.147" level="INFO">${status} = false</msg>
+<status status="PASS" starttime="20240507 18:57:19.091" endtime="20240507 18:57:19.148"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${status}</arg>
+<arg>false</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240507 18:57:19.148" endtime="20240507 18:57:19.149"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:19.090" endtime="20240507 18:57:19.149"/>
+</kw>
+<kw name="And User create 2 reading stations" library="antenna_parameter">
+<doc>User Create 2 Reading Stations</doc>
+<kw name="Change Number Of Reading Stations Count" library="antenna_parameter">
+<arg>2</arg>
+<doc>To Change Number of reading stations count</doc>
+<kw name="User Switch Reading Station Number" library="antenna_parameter_elements">
+<arg>${count_to_be_change}</arg>
+<doc>User switch reading station number</doc>
+<if>
+<branch type="IF" condition="${choice} == 1">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240507 18:57:19.159" endtime="20240507 18:57:19.159"/>
+</kw>
+<status status="NOT RUN" starttime="20240507 18:57:19.159" endtime="20240507 18:57:19.160"/>
+</branch>
+<branch type="ELSE IF" condition="${choice} == 2">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice2}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240507 18:57:19.161" level="INFO">${ele_click} = ((//ifm-scroll-panel)[2]//li//span)[2]</msg>
+<status status="PASS" starttime="20240507 18:57:19.160" endtime="20240507 18:57:19.161"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:19.160" endtime="20240507 18:57:19.161"/>
+</branch>
+<branch type="ELSE IF" condition="${choice} == 3">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice3}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240507 18:57:19.162" endtime="20240507 18:57:19.162"/>
+</kw>
+<status status="NOT RUN" starttime="20240507 18:57:19.161" endtime="20240507 18:57:19.162"/>
+</branch>
+<branch type="ELSE IF" condition="${choice} == 4">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice4}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240507 18:57:19.163" endtime="20240507 18:57:19.163"/>
+</kw>
+<status status="NOT RUN" starttime="20240507 18:57:19.162" endtime="20240507 18:57:19.163"/>
+</branch>
+<status status="PASS" starttime="20240507 18:57:19.158" endtime="20240507 18:57:19.163"/>
+</if>
+<kw name="Click On Element" library="elements">
+<arg>${Number_of_reading_stations_dropdown}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240507 18:57:49.598" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-4.png"&gt;&lt;img src="browser/screenshot/fail-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240507 18:57:49.599" level="FAIL">TimeoutError: locator.click: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for locator('xpath=//html/body/app-root/app-wizards/app-expert-mode/section/div/div[1]/app-antenna-settings/section/div/ifm-scroll-panel/div/div[1]/app-rs-settings/div/div[2]/div[2]/ifm-select/ifm-field/div/div/div[1]/div')
+============================================================
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<status status="FAIL" starttime="20240507 18:57:19.169" endtime="20240507 18:57:49.600"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:57:19.168" endtime="20240507 18:57:49.600"/>
+</kw>
+<kw name="Click On Element" library="elements">
+<arg>${ele_click}</arg>
+<doc>Click on element</doc>
+<status status="NOT RUN" starttime="20240507 18:57:49.602" endtime="20240507 18:57:49.602"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:57:19.158" endtime="20240507 18:57:49.602"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:57:19.152" endtime="20240507 18:57:49.602"/>
+</kw>
+<kw name="Get Antenna Parameters Reading Station Count" library="antenna_parameter_elements">
+<var>${count}</var>
+<doc>Get Antenna Parameters Reading Station Count</doc>
+<status status="NOT RUN" starttime="20240507 18:57:49.602" endtime="20240507 18:57:49.603"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${count}</arg>
+<arg>${count}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20240507 18:57:49.603" endtime="20240507 18:57:49.603"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:57:19.151" endtime="20240507 18:57:49.603"/>
+</kw>
+<kw name="Then User verify synchronize all ports function" library="antenna_parameter">
+<doc>User Verify Synchronize All Ports Function</doc>
+<status status="NOT RUN" starttime="20240507 18:57:49.604" endtime="20240507 18:57:49.604"/>
+</kw>
+<tag>Thanos_01-1903</tag>
+<status status="FAIL" starttime="20240507 18:57:10.485" endtime="20240507 18:57:49.604">TimeoutError: locator.click: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for locator('xpath=//html/body/app-root/app-wizards/app-expert-mode/section/div/div[1]/app-antenna-settings/section/div/ifm-scroll-panel/div/div[1]/app-rs-settings/div/div[2]/div[2]/ifm-select/ifm-field/div/div/div[1]/div')
+============================================================
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</test>
+<doc>DETTLX470</doc>
+<status status="FAIL" starttime="20240507 18:54:47.130" endtime="20240507 18:57:49.739"/>
+</suite>
+<suite id="s1-s1-s2" name="002 Antenna" source="D:\thanos_web_testing\testsuite\01_Home\002_Antenna.robot">
+<test id="s1-s1-s2-t1" name="User defined Antenna gain value validation" line="8">
+<kw name="Open Browser And Maximize" library="common" type="SETUP">
+<arg>${environment}</arg>
+<doc>Open Browser And Maximize</doc>
+<kw name="New Browser" library="Browser">
+<arg>${BROWSER}</arg>
+<arg>headless=${HEADLESS_MODE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20240507 18:57:49.808" level="INFO">{"browser": "chromium", "headless": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "deprecated_pos_args": [], "tracesDir": "D:\\thanos_web_testing\\browser\\traces\\224a569e-214b-423e-8dd5-d34473293a6b"}</msg>
+<msg timestamp="20240507 18:57:50.773" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"deprecated_pos_args":[],"tracesDir":"D:\\thanos_web_testing\\browser\\traces\\224a569e-214b-423e-8dd5-d34473293a6b"}</msg>
+<status status="PASS" starttime="20240507 18:57:49.807" endtime="20240507 18:57:50.774"/>
+</kw>
+<kw name="New Context" library="Browser">
+<arg>viewport={'width': 1200, 'height': 1000}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20240507 18:57:50.781" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "hideRfBrowser": false,
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "viewport": {
+    "height": 1000,
+    "width": 1200
+  },
+  "deprecated_pos_args": []
+}</msg>
+<msg timestamp="20240507 18:57:50.821" level="INFO">Successfully created context. </msg>
+<msg timestamp="20240507 18:57:50.822" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': False, 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'viewport': {'height': 1000, 'width': 1200}, 'deprecated_pos_args': []}</msg>
+<status status="PASS" starttime="20240507 18:57:50.776" endtime="20240507 18:57:50.823"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>${DEFAULT_TIMEOUT}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<msg timestamp="20240507 18:57:50.838" level="INFO">Set timeout to: 30000</msg>
+<status status="PASS" starttime="20240507 18:57:50.824" endtime="20240507 18:57:50.839"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${environment}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20240507 18:57:54.407" level="INFO">Successfully initialized new page object and opened url: http://172.25.125.139</msg>
+<status status="PASS" starttime="20240507 18:57:50.840" endtime="20240507 18:57:54.408"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:49.806" endtime="20240507 18:57:54.408"/>
+</kw>
+<kw name="Given The User Is Logged In To The Thanos Application" library="landing_page">
+<doc>The User Is Logged In To The Thanos Application</doc>
+<kw name="Click On Element" library="elements">
+<arg>${lock_icon}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:57:54.414" endtime="20240507 18:57:54.979"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:54.414" endtime="20240507 18:57:54.980"/>
+</kw>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${password_input}</arg>
+<arg>password</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:57:54.992" level="INFO">Fills the text 'password' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:57:54.991" endtime="20240507 18:57:55.030"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:54.990" endtime="20240507 18:57:55.031"/>
+</kw>
+<kw name="Click On Element" library="elements">
+<arg>${login_btn}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:57:55.037" endtime="20240507 18:57:55.568"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:55.036" endtime="20240507 18:57:55.569"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:54.409" endtime="20240507 18:57:55.570"/>
+</kw>
+<kw name="When User Navigates To Antenna Parameters Window" library="antenna_parameter">
+<doc>User Navigates To Antenna Parameters Window</doc>
+<kw name="User Click On Application Tab" library="landing_page">
+<doc>User Click On Application Tab</doc>
+<kw name="Click On Element" library="elements">
+<arg>${Application_tab}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:57:55.586" endtime="20240507 18:57:55.780"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:55.584" endtime="20240507 18:57:55.781"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:55.574" endtime="20240507 18:57:55.783"/>
+</kw>
+<kw name="User Click On Plus Sign To Open Wizard Type" library="application">
+<doc>User Click On Plus Sign To Open Wizard Type</doc>
+<kw name="Click On Element" library="elements">
+<arg>${wizard_plus_sign}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:57:55.801" endtime="20240507 18:57:55.954"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:55.799" endtime="20240507 18:57:55.955"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:55.784" endtime="20240507 18:57:55.955"/>
+</kw>
+<kw name="User Selects Wizard 3" library="application">
+<doc>User Selects Wizard 3</doc>
+<kw name="Click On Element" library="elements">
+<arg>${wizard3}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:57:55.965" endtime="20240507 18:57:56.029"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:55.964" endtime="20240507 18:57:56.030"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:55.956" endtime="20240507 18:57:56.030"/>
+</kw>
+<kw name="User Enter Nessesary Inputs To Create A New App" library="application">
+<doc>User Enter Nessesary Inputs To Create A New App</doc>
+<kw name="Click On Element" library="elements">
+<arg>${wizard3}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:57:56.040" endtime="20240507 18:57:56.109"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:56.039" endtime="20240507 18:57:56.109"/>
+</kw>
+<kw name="Enter App Name" library="application">
+<arg>${DEFAULT_APP_NAME}</arg>
+<doc>Enter App Name</doc>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${app_name_input}</arg>
+<arg>${app_name}</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:57:56.130" level="INFO">Fills the text 'Thanos_Test_App' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:57:56.129" endtime="20240507 18:57:56.163"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:56.127" endtime="20240507 18:57:56.164"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:56.115" endtime="20240507 18:57:56.164"/>
+</kw>
+<kw name="Enter Description" library="application">
+<arg>${DEFAULT_APP_DESCRIPTION}</arg>
+<doc>Enter Description</doc>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${app_description_input}</arg>
+<arg>${app_description}</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:57:56.183" level="INFO">Fills the text 'Thanos_Test_App_Description' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:57:56.182" endtime="20240507 18:57:56.216"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:56.181" endtime="20240507 18:57:56.216"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:56.171" endtime="20240507 18:57:56.217"/>
+</kw>
+<kw name="Enter Author Name" library="application">
+<arg>${DEFAULT_AUTHOR_NAME}</arg>
+<doc>Enter Author Name</doc>
+<kw name="Enter Text Into Textbox" library="text_interaction">
+<arg>${app_author_input}</arg>
+<arg>${app_author}</arg>
+<doc>Enter Text Into Textbox</doc>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=${locator}</arg>
+<arg>${text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240507 18:57:56.233" level="INFO">Fills the text 'Yogesh' in the given field.</msg>
+<status status="PASS" starttime="20240507 18:57:56.233" endtime="20240507 18:57:56.264"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:56.232" endtime="20240507 18:57:56.265"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:56.222" endtime="20240507 18:57:56.265"/>
+</kw>
+<kw name="Click On Element" library="elements">
+<arg>${ok_btn}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240507 18:57:56.270" endtime="20240507 18:57:56.481"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:56.269" endtime="20240507 18:57:56.482"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:56.031" endtime="20240507 18:57:56.482"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:55.573" endtime="20240507 18:57:56.483"/>
+</kw>
+<kw name="Then Add Reading Station" library="antenna_parameter">
+<doc>Add Reading Station</doc>
+<kw name="Change Number Of Reading Stations Count" library="antenna_parameter">
+<arg>3</arg>
+<doc>To Change Number of reading stations count</doc>
+<kw name="User Switch Reading Station Number" library="antenna_parameter_elements">
+<arg>${count_to_be_change}</arg>
+<doc>User switch reading station number</doc>
+<if>
+<branch type="IF" condition="${choice} == 1">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240507 18:57:56.496" endtime="20240507 18:57:56.496"/>
+</kw>
+<status status="NOT RUN" starttime="20240507 18:57:56.495" endtime="20240507 18:57:56.497"/>
+</branch>
+<branch type="ELSE IF" condition="${choice} == 2">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice2}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240507 18:57:56.498" endtime="20240507 18:57:56.498"/>
+</kw>
+<status status="NOT RUN" starttime="20240507 18:57:56.497" endtime="20240507 18:57:56.498"/>
+</branch>
+<branch type="ELSE IF" condition="${choice} == 3">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice3}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240507 18:57:56.500" level="INFO">${ele_click} = ((//ifm-scroll-panel)[2]//li//span)[3]</msg>
+<status status="PASS" starttime="20240507 18:57:56.499" endtime="20240507 18:57:56.500"/>
+</kw>
+<status status="PASS" starttime="20240507 18:57:56.499" endtime="20240507 18:57:56.500"/>
+</branch>
+<branch type="ELSE IF" condition="${choice} == 4">
+<kw name="Set Variable" library="BuiltIn">
+<var>${ele_click}</var>
+<arg>${dropdown_choice4}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240507 18:57:56.501" endtime="20240507 18:57:56.502"/>
+</kw>
+<status status="NOT RUN" starttime="20240507 18:57:56.501" endtime="20240507 18:57:56.502"/>
+</branch>
+<status status="PASS" starttime="20240507 18:57:56.495" endtime="20240507 18:57:56.502"/>
+</if>
+<kw name="Click On Element" library="elements">
+<arg>${Number_of_reading_stations_dropdown}</arg>
+<doc>Click on element</doc>
+<kw name="Click" library="Browser">
+<arg>xpath=${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240507 18:58:25.426" level="WARN">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg timestamp="20240507 18:58:25.429" level="FAIL">Execution terminated by signal</msg>
+<status status="FAIL" starttime="20240507 18:57:56.509" endtime="20240507 18:58:25.468"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:57:56.508" endtime="20240507 18:58:25.469"/>
+</kw>
+<kw name="Click On Element" library="elements">
+<arg>${ele_click}</arg>
+<doc>Click on element</doc>
+<status status="NOT RUN" starttime="20240507 18:58:25.470" endtime="20240507 18:58:25.470"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:57:56.494" endtime="20240507 18:58:25.470"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:57:56.486" endtime="20240507 18:58:25.470"/>
+</kw>
+<kw name="Add Port In Reading Station" library="antenna_parameter">
+<arg>2</arg>
+<arg>2</arg>
+<doc>Add Port in Reading station</doc>
+<status status="NOT RUN" starttime="20240507 18:58:25.474" endtime="20240507 18:58:25.475"/>
+</kw>
+<kw name="Add Port In Reading Station" library="antenna_parameter">
+<arg>3</arg>
+<arg>1</arg>
+<doc>Add Port in Reading station</doc>
+<status status="NOT RUN" starttime="20240507 18:58:25.489" endtime="20240507 18:58:25.489"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:57:56.485" endtime="20240507 18:58:25.490"/>
+</kw>
+<kw name="And Validate User Defined Antenna Gain Value" library="antenna_parameter">
+<doc>Validate User Defined Antenna Gain Value</doc>
+<status status="NOT RUN" starttime="20240507 18:58:25.492" endtime="20240507 18:58:25.492"/>
+</kw>
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-2248|Thanos_01-2248]</doc>
+<tag>Thanos_01-2248</tag>
+<status status="FAIL" starttime="20240507 18:57:49.802" endtime="20240507 18:58:25.493">Execution terminated by signal</status>
+</test>
+<test id="s1-s1-s2-t2" name="Test of number of reading stations for filter" line="16">
+<kw name="Open Browser And Maximize" library="common" type="SETUP">
+<arg>${environment}</arg>
+<doc>Open Browser And Maximize</doc>
+<kw name="New Browser" library="Browser">
+<arg>${BROWSER}</arg>
+<arg>headless=${HEADLESS_MODE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="FAIL" starttime="20240507 18:58:25.520" endtime="20240507 18:58:25.521"/>
+</kw>
+<kw name="New Context" library="Browser">
+<arg>viewport={'width': 1200, 'height': 1000}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="NOT RUN" starttime="20240507 18:58:25.521" endtime="20240507 18:58:25.521"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>${DEFAULT_TIMEOUT}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="NOT RUN" starttime="20240507 18:58:25.522" endtime="20240507 18:58:25.522"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${environment}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" starttime="20240507 18:58:25.522" endtime="20240507 18:58:25.522"/>
+</kw>
+<status status="FAIL" starttime="20240507 18:58:25.520" endtime="20240507 18:58:25.522"/>
+</kw>
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-2171|Thanos_01-2171]</doc>
+<tag>Thanos_01-2171</tag>
+<status status="FAIL" starttime="20240507 18:58:25.516" endtime="20240507 18:58:25.523">Setup failed:
+Execution terminated by signal</status>
+</test>
+<test id="s1-s1-s2-t3" name="Kill password input test" line="23">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-2144|Thanos_01-2144]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-2144</tag>
+<status status="FAIL" starttime="20240507 18:58:25.526" endtime="20240507 18:58:25.531">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-s2-t4" name="Test Radiated Power Value Validations" line="30">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-2104|Thanos_01-2104]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-2104</tag>
+<status status="FAIL" starttime="20240507 18:58:25.535" endtime="20240507 18:58:25.540">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-s2-t5" name="Selection Of The Data To Be Shown In SDI Interface" line="37">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-2310|Thanos_01-2310]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-2310</tag>
+<status status="FAIL" starttime="20240507 18:58:25.549" endtime="20240507 18:58:25.554">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-s2-t6" name="Selection Of The Format To Be Shown In SDI Interface" line="45">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-2318|Thanos_01-2318]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-2318</tag>
+<status status="FAIL" starttime="20240507 18:58:25.568" endtime="20240507 18:58:25.574">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-s2-t7" name="Tooltips test" line="53">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-2327|Thanos_01-2327]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-2327</tag>
+<status status="FAIL" starttime="20240507 18:58:25.582" endtime="20240507 18:58:25.584">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-s2-t8" name="User Defined Cable Attenuation Value Validation" line="60">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-2096|Thanos_01-2096]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-2096</tag>
+<status status="FAIL" starttime="20240507 18:58:25.591" endtime="20240507 18:58:25.594">Test execution stopped due to a fatal error.</status>
+</test>
+<doc>DETTLX470</doc>
+<status status="FAIL" starttime="20240507 18:57:49.756" endtime="20240507 18:58:25.600"/>
+</suite>
+<suite id="s1-s1-s3" name="003 Tag Access" source="D:\thanos_web_testing\testsuite\01_Home\003_Tag_Access.robot">
+<test id="s1-s1-s3-t1" name="Access And Kill Password Input Test" line="8">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-2144|Thanos_01-2144]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-2144</tag>
+<status status="FAIL" starttime="20240507 18:58:25.619" endtime="20240507 18:58:25.621">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-s3-t2" name="Checkbox Verified Writing" line="18">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-2114|Thanos_01-2114]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-2114</tag>
+<status status="FAIL" starttime="20240507 18:58:25.624" endtime="20240507 18:58:25.625">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-s3-t3" name="Test Of Number Of Reading Stations for Tag Access" line="27">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-2145|Thanos_01-2145]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-2145</tag>
+<status status="FAIL" starttime="20240507 18:58:25.627" endtime="20240507 18:58:25.628">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-s3-t4" name="Access Password Input Test" line="34">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-2143|Thanos_01-2143]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-2143</tag>
+<status status="FAIL" starttime="20240507 18:58:25.628" endtime="20240507 18:58:25.629">Test execution stopped due to a fatal error.</status>
+</test>
+<doc>DETTLX470</doc>
+<status status="FAIL" starttime="20240507 18:58:25.615" endtime="20240507 18:58:25.633"/>
+</suite>
+<suite id="s1-s1-s4" name="004 Filter" source="D:\thanos_web_testing\testsuite\01_Home\004_Filter.robot">
+<test id="s1-s1-s4-t1" name="Filter Deletion Test" line="8">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-2241|Thanos_01-2241]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-2241</tag>
+<status status="FAIL" starttime="20240507 18:58:25.641" endtime="20240507 18:58:25.641">Test execution stopped due to a fatal error.</status>
+</test>
+<doc>DETTLX470</doc>
+<status status="FAIL" starttime="20240507 18:58:25.640" endtime="20240507 18:58:25.643"/>
+</suite>
+<status status="FAIL" starttime="20240507 18:54:47.128" endtime="20240507 18:58:25.646"/>
+</suite>
+<suite id="s1-s2" name="02 Device Configuration" source="D:\thanos_web_testing\testsuite\02_Device_Configuration">
+<suite id="s1-s2-s1" name="001 FTP" source="D:\thanos_web_testing\testsuite\02_Device_Configuration\001_FTP.robot">
+<test id="s1-s2-s1-t1" name="SFTP Server Configuration Form Will Be Tested" line="8">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-3244|Thanos_01-3244]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-3244</tag>
+<status status="FAIL" starttime="20240507 18:58:25.656" endtime="20240507 18:58:25.658">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s2-s1-t2" name="Input Field Server Name Will Be Tested" line="16">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-3245|Thanos_01-3245]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-3245</tag>
+<status status="FAIL" starttime="20240507 18:58:25.662" endtime="20240507 18:58:25.663">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s2-s1-t3" name="Input Port Number Will Be Tested" line="24">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-3247|Thanos_01-3247]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-3247</tag>
+<status status="FAIL" starttime="20240507 18:58:25.667" endtime="20240507 18:58:25.672">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s2-s1-t4" name="Input Server IP Address Will Be Tested" line="32">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-3246|Thanos_01-3246]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-3246</tag>
+<status status="FAIL" starttime="20240507 18:58:25.673" endtime="20240507 18:58:25.674">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s2-s1-t5" name="Key Field Will Be Tested" line="40">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-3250|Thanos_01-3250]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-3250</tag>
+<status status="FAIL" starttime="20240507 18:58:25.675" endtime="20240507 18:58:25.676">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s2-s1-t6" name="Password Field Will Be Tested" line="48">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-3249|Thanos_01-3249]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-3249</tag>
+<status status="FAIL" starttime="20240507 18:58:25.679" endtime="20240507 18:58:25.683">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s2-s1-t7" name="Username Field Will Be Tested" line="56">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-3248|Thanos_01-3248]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-3248</tag>
+<status status="FAIL" starttime="20240507 18:58:25.689" endtime="20240507 18:58:25.689">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s2-s1-t8" name="Cancel Button Will Be Tested" line="64">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-3252|Thanos_01-3252]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-3252</tag>
+<status status="FAIL" starttime="20240507 18:58:25.691" endtime="20240507 18:58:25.700">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s2-s1-t9" name="Save Button Will Be Tested" line="72">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-3251|Thanos_01-3251]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-3251</tag>
+<status status="FAIL" starttime="20240507 18:58:25.716" endtime="20240507 18:58:25.718">Test execution stopped due to a fatal error.</status>
+</test>
+<doc>172.25.125.139</doc>
+<status status="FAIL" starttime="20240507 18:58:25.653" endtime="20240507 18:58:25.730"/>
+</suite>
+<suite id="s1-s2-s2" name="002 NTP" source="D:\thanos_web_testing\testsuite\02_Device_Configuration\002_NTP.robot">
+<test id="s1-s2-s2-t1" name="NTP Form Will Be Tested" line="8">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-3415|Thanos_01-3415]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-3415</tag>
+<status status="FAIL" starttime="20240507 18:58:25.738" endtime="20240507 18:58:25.740">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s2-s2-t2" name="Verify Switch Activate NTP" line="16">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-3416|Thanos_01-3416]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-3416</tag>
+<status status="FAIL" starttime="20240507 18:58:25.743" endtime="20240507 18:58:25.745">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s2-s2-t3" name="Verify Number Of Supported NTP Servers" line="24">
+<doc>[https://polarionsy.intra.ifm/polarion/#/project/DTE84x_DTE94x_01/workitem?id=Thanos_01-3417|Thanos_01-3417]</doc>
+<tag>robot:exit</tag>
+<tag>Thanos_01-3417</tag>
+<status status="FAIL" starttime="20240507 18:58:25.751" endtime="20240507 18:58:25.754">Test execution stopped due to a fatal error.</status>
+</test>
+<doc>172.25.125.139</doc>
+<status status="FAIL" starttime="20240507 18:58:25.736" endtime="20240507 18:58:25.756"/>
+</suite>
+<status status="FAIL" starttime="20240507 18:58:25.648" endtime="20240507 18:58:25.759"/>
+</suite>
+<status status="FAIL" starttime="20240507 18:54:47.111" endtime="20240507 18:58:25.767"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="30" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="7" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-1899</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-1900</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-1901</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-1903</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-2096</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-2104</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-2114</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-2143</stat>
+<stat pass="0" fail="2" skip="0">Thanos_01-2144</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-2145</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-2171</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-2241</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-2248</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-2310</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-2318</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-2327</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-3244</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-3245</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-3246</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-3247</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-3248</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-3249</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-3250</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-3251</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-3252</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-3415</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-3416</stat>
+<stat pass="0" fail="1" skip="0">Thanos_01-3417</stat>
+<stat pass="0" fail="1" skip="0">tst</stat>
+</tag>
+<suite>
+<stat pass="0" fail="30" skip="0" id="s1" name="Testsuite">Testsuite</stat>
+<stat pass="0" fail="18" skip="0" id="s1-s1" name="01 Home">Testsuite.01 Home</stat>
+<stat pass="0" fail="5" skip="0" id="s1-s1-s1" name="001 Home page">Testsuite.01 Home.001 Home page</stat>
+<stat pass="0" fail="8" skip="0" id="s1-s1-s2" name="002 Antenna">Testsuite.01 Home.002 Antenna</stat>
+<stat pass="0" fail="4" skip="0" id="s1-s1-s3" name="003 Tag Access">Testsuite.01 Home.003 Tag Access</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s4" name="004 Filter">Testsuite.01 Home.004 Filter</stat>
+<stat pass="0" fail="12" skip="0" id="s1-s2" name="02 Device Configuration">Testsuite.02 Device Configuration</stat>
+<stat pass="0" fail="9" skip="0" id="s1-s2-s1" name="001 FTP">Testsuite.02 Device Configuration.001 FTP</stat>
+<stat pass="0" fail="3" skip="0" id="s1-s2-s2" name="002 NTP">Testsuite.02 Device Configuration.002 NTP</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20240507 18:55:13.187" level="WARN">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg timestamp="20240507 18:58:25.426" level="WARN">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+</errors>
+</robot>

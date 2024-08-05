@@ -1,0 +1,51 @@
+
+stages:          # List of stages for jobs, and their order of execution
+  - lint
+  - test
+  - export
+
+default:
+    tags:
+        - thanos_runner
+
+lint-job:       # This job runs in the build stage, which runs first.
+  stage: lint
+  script:
+    - echo "checking the code..."
+    - python -m robot --dryrun .\Testsuite
+    #- rflint .\Testsuite\01_Home
+  when: always
+  # only:
+  #       - schedules
+
+test-job:   # This job runs in the test stage.
+  stage: test    # It only starts when the job in the build stage completes successfully.
+  timeout: 30h
+  artifacts:
+    when: always
+    paths:
+      - public
+    expire_in: 1 month
+    reports:
+      junit:
+      - public/junitresult.xml
+  allow_failure: true
+  script:
+    - echo "Running unit tests..."
+    #- node -v
+    # - npm -v
+    - rfbrowser init
+    - robot -v HEADLESS_MODE:True --outputdir public --output POMchrome.xml -x junitresult.xml --listener listener.py --log POMchrome-log.html --report POMchrome.html .\Testsuite
+  #when: always
+  only:
+        - schedules
+
+
+export-job:   # This job also runs in the test stage.
+  stage: export    # It can run at the same time as unit-test-job (in parallel).
+  script:
+    - echo "export to polarion"
+  when: manual
+
+
+

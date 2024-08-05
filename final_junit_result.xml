@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Testsuite" tests="30" errors="0" failures="30" skipped="0" time="218.656">
+<testsuite name="01 Home" tests="18" errors="0" failures="18" skipped="0" time="218.518">
+<testsuite name="001 Home page" tests="5" errors="0" failures="5" skipped="0" time="182.609">
+<testcase classname="Testsuite.01 Home.001 Home page" name="Configuration of the number of reading station in device will be tested" time="23.417">
+<failure message="Error: locator.click: Target closed&#10;=========================== logs ===========================&#10;waiting for locator('xpath=//html/body/app-root/app-wizards/app-expert-mode/section/div/div[1]/app-antenna-settings/section/div/ifm-scroll-panel/div/div[1]/app-rs-settings/div/div[2]/div[2]/ifm-select/ifm-field/div/div/div[1]/div')&#10;============================================================" type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.01 Home.001 Home page" name="Function of deleting of reading stations will be tested" time="39.467">
+<failure message="TimeoutError: locator.click: Timeout 30000ms exceeded.&#10;=========================== logs ===========================&#10;waiting for locator('xpath=//html/body/app-root/app-wizards/app-expert-mode/section/div/div[1]/app-antenna-settings/section/div/ifm-scroll-panel/div/div[1]/app-rs-settings/div/div[2]/div[2]/ifm-select/ifm-field/div/div/div[1]/div')&#10;============================================================&#10;Tip: Use &quot;Set Browser Timeout&quot; for increasing the timeout or double check your locator as the targeted element(s) couldn't be found." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.01 Home.001 Home page" name="Function of adding and removing of ports to reading station will be tested" time="38.801">
+<failure message="TimeoutError: locator.click: Timeout 30000ms exceeded.&#10;=========================== logs ===========================&#10;waiting for locator('xpath=//html/body/app-root/app-wizards/app-expert-mode/section/div/div[1]/app-antenna-settings/section/div/ifm-scroll-panel/div/div[1]/app-rs-settings/div/div[2]/div[2]/ifm-select/ifm-field/div/div/div[1]/div')&#10;============================================================&#10;Tip: Use &quot;Set Browser Timeout&quot; for increasing the timeout or double check your locator as the targeted element(s) couldn't be found." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.01 Home.001 Home page" name="Function/Switch Activate Reading station and Activate port" time="38.467">
+<failure message="TimeoutError: locator.click: Timeout 30000ms exceeded.&#10;=========================== logs ===========================&#10;waiting for locator('xpath=//html/body/app-root/app-wizards/app-expert-mode/section/div/div[1]/app-antenna-settings/section/div/ifm-scroll-panel/div/div[1]/app-rs-settings/div/div[2]/div[2]/ifm-select/ifm-field/div/div/div[1]/div')&#10;============================================================&#10;Tip: Use &quot;Set Browser Timeout&quot; for increasing the timeout or double check your locator as the targeted element(s) couldn't be found." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.01 Home.001 Home page" name="Function synchronize all Ports" time="39.119">
+<failure message="TimeoutError: locator.click: Timeout 30000ms exceeded.&#10;=========================== logs ===========================&#10;waiting for locator('xpath=//html/body/app-root/app-wizards/app-expert-mode/section/div/div[1]/app-antenna-settings/section/div/ifm-scroll-panel/div/div[1]/app-rs-settings/div/div[2]/div[2]/ifm-select/ifm-field/div/div/div[1]/div')&#10;============================================================&#10;Tip: Use &quot;Set Browser Timeout&quot; for increasing the timeout or double check your locator as the targeted element(s) couldn't be found." type="AssertionError"/>
+</testcase>
+<properties>
+<property name="Documentation" value="DETTLX470"/>
+</properties>
+</testsuite>
+<testsuite name="002 Antenna" tests="8" errors="0" failures="8" skipped="0" time="35.844">
+<testcase classname="Testsuite.01 Home.002 Antenna" name="User defined Antenna gain value validation" time="35.691">
+<failure message="Execution terminated by signal" type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.01 Home.002 Antenna" name="Test of number of reading stations for filter" time="0.007">
+<failure message="Setup failed:&#10;Execution terminated by signal" type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.01 Home.002 Antenna" name="Kill password input test" time="0.005">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.01 Home.002 Antenna" name="Test Radiated Power Value Validations" time="0.005">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.01 Home.002 Antenna" name="Selection Of The Data To Be Shown In SDI Interface" time="0.005">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.01 Home.002 Antenna" name="Selection Of The Format To Be Shown In SDI Interface" time="0.006">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.01 Home.002 Antenna" name="Tooltips test" time="0.002">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.01 Home.002 Antenna" name="User Defined Cable Attenuation Value Validation" time="0.003">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<properties>
+<property name="Documentation" value="DETTLX470"/>
+</properties>
+</testsuite>
+<testsuite name="003 Tag Access" tests="4" errors="0" failures="4" skipped="0" time="0.018">
+<testcase classname="Testsuite.01 Home.003 Tag Access" name="Access And Kill Password Input Test" time="0.002">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.01 Home.003 Tag Access" name="Checkbox Verified Writing" time="0.001">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.01 Home.003 Tag Access" name="Test Of Number Of Reading Stations for Tag Access" time="0.001">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.01 Home.003 Tag Access" name="Access Password Input Test" time="0.001">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<properties>
+<property name="Documentation" value="DETTLX470"/>
+</properties>
+</testsuite>
+<testsuite name="004 Filter" tests="1" errors="0" failures="1" skipped="0" time="0.003">
+<testcase classname="Testsuite.01 Home.004 Filter" name="Filter Deletion Test" time="0.000">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<properties>
+<property name="Documentation" value="DETTLX470"/>
+</properties>
+</testsuite>
+</testsuite>
+<testsuite name="02 Device Configuration" tests="12" errors="0" failures="12" skipped="0" time="0.111">
+<testsuite name="001 FTP" tests="9" errors="0" failures="9" skipped="0" time="0.077">
+<testcase classname="Testsuite.02 Device Configuration.001 FTP" name="SFTP Server Configuration Form Will Be Tested" time="0.002">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.02 Device Configuration.001 FTP" name="Input Field Server Name Will Be Tested" time="0.001">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.02 Device Configuration.001 FTP" name="Input Port Number Will Be Tested" time="0.005">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.02 Device Configuration.001 FTP" name="Input Server IP Address Will Be Tested" time="0.001">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.02 Device Configuration.001 FTP" name="Key Field Will Be Tested" time="0.001">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.02 Device Configuration.001 FTP" name="Password Field Will Be Tested" time="0.004">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.02 Device Configuration.001 FTP" name="Username Field Will Be Tested" time="0.000">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.02 Device Configuration.001 FTP" name="Cancel Button Will Be Tested" time="0.009">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.02 Device Configuration.001 FTP" name="Save Button Will Be Tested" time="0.002">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<properties>
+<property name="Documentation" value="172.25.125.139"/>
+</properties>
+</testsuite>
+<testsuite name="002 NTP" tests="3" errors="0" failures="3" skipped="0" time="0.020">
+<testcase classname="Testsuite.02 Device Configuration.002 NTP" name="NTP Form Will Be Tested" time="0.002">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.02 Device Configuration.002 NTP" name="Verify Switch Activate NTP" time="0.002">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<testcase classname="Testsuite.02 Device Configuration.002 NTP" name="Verify Number Of Supported NTP Servers" time="0.003">
+<failure message="Test execution stopped due to a fatal error." type="AssertionError"/>
+</testcase>
+<properties>
+<property name="Documentation" value="172.25.125.139"/>
+</properties>
+</testsuite>
+</testsuite>
+</testsuite>
